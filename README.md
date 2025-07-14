@@ -8,7 +8,7 @@ Pending is a savings goal product, aimed at underserved markets to assist in ach
 
 ## Components
 
-Pending utilizes Banno, Rise Analytics, and Libum's NexumAPI.
+Pending utilizes Banno and Rise Analytics.
 
 ## Contributions
 
