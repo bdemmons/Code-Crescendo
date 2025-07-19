@@ -1,0 +1,39 @@
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", "Bearer eyJlbWFpbCI6InNicmlnZ3NAdGVsY29lLmNvbSIsInZlcnNpb24iOjEsImlzc3VlZEF0IjoiMjAyNS0wNy0xOFQxNzo1MzoyNy4yMzFaIiwiZXhwaXJlc0F0IjoiMjEyNS0wNi0yNFQxNzo1MzoyNy4yMzJaIn0=.MEYCIQDMbN+uceL26yY7aHc64xKcG1AlopTkWHsMlRBrVmlqNgIhAPNqzE8jjjeoDPLO5VMaAt9IpyScXSyNvjxhUDOhnkjY");
+
+const raw = JSON.stringify({
+  "Header": {
+    "MessageID": "CreatingSpendBreakAccount"
+  },
+  "Body": {
+    "File": "CODECRESCENDOCREATESPENDBREAK",
+    "RGSession": 1,
+    "UserDefinedParameters": {
+      "RGUserChr": [
+        {
+          "ID": 1,
+          "Value": "0000013381"
+        }
+      ]
+    }
+  },
+  "Credentials": {
+    "UserNumberCredentials": {
+      "UserNumber": 103,
+      "Password": "symitar!"
+    }
+  }
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("https://cubuild-naas.cubuild.libum.io/nexum/777/2022.01/poweron/executePowerOnReturnArray", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
